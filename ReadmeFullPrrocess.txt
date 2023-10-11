@@ -30,3 +30,21 @@
 	4)step-2: read xml files
 	#from each xml file we need to extract 
 	#filename, size(width,height), object(name,xmin,xmax,ymin,ymax)
+	5)For multiple xml file we have to run it into a loop
+	6)Convert it into map then to list
+	7)convert 3d list to 2d list
+	8)Add the list to the database
+4-->Preparing labels for Yolo Model
+	We need information for center x and center y
+	centerX , centerY = center position of the object normalized to width of the image
+	w,h= width and height of the bounding box normalized to the width and height of the image
+
+	so [name,xmin,xmax,ymin,ymax] will be converted to [name,centerX,centerY,w,h]
+	
+	centerX = ((xmin+xmax)/2)/width of the image
+	centerY = ((ymin+ymax)/2)/width of the image
+	w = ((xmax - xmin)/2)/width of the image
+	h = ((ymax - ymin)/2)/width of the image
+
+
+
